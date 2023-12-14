@@ -1,0 +1,26 @@
+(venv) theia:devops-capstone-project$ tkn pipeline start cd-pipeline \
+-p repo-url="https://github.com/$GITHUB_ACCOUNT/devops-capstone-project.git" \
+-p branch=main \
+-p build-image=image-registry.openshift-image-registry.svc:5000/$SN_ICR_NAMESPACE/accounts:1 \
+-w name=pipeline-workspace,claimName=pipelinerun-pvc \
+-s pipeline \
+--showlog
+PipelineRun started: cd-pipeline-run-tccsf
+Waiting for logs to be available...
+(venv) theia:devops-capstone-project$ tkn pipelinerun ls
+NAME                    STARTED          DURATION   STATUS
+cd-pipeline-run-tccsf   3 minutes ago    3m2s       Succeeded
+cd-pipeline-run-qbhnl   8 minutes ago    56s        Succeeded
+cd-pipeline-run-xznqh   39 minutes ago   53s        Succeeded
+cd-pipeline-run-h5f85   1 hour ago       1m2s       Failed
+cd-pipeline-run-drjgd   1 hour ago       57s        Failed
+cd-pipeline-run-ql58t   1 hour ago       17s        Succeeded
+cd-pipeline-run-6685p   1 hour ago       54s        Failed
+cd-pipeline-run-bdvlz   1 hour ago       58s        Failed
+cd-pipeline-run-6jtlh   1 hour ago       55s        Failed
+cd-pipeline-run-kkqn2   1 hour ago       18s        Succeeded
+cd-pipeline-run-4tbnr   1 hour ago       16s        Failed
+cd-pipeline-run-5n4cf   1 hour ago       16s        Failed
+cd-pipeline-run-kfqd4   1 hour ago       18s        Failed
+cd-pipeline-run-kzwvm   1 hour ago       0s         Failed(CouldntGetTask)
+cd-pipeline-run-69ts9   1 hour ago       0s         Failed(CouldntGetTask)
